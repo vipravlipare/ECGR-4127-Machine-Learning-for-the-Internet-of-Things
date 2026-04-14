@@ -1,0 +1,23 @@
+1. cd C:\Espressif\frameworks\esp-idf-v5.5.3\esp-who\examples\human_face_recognition
+2. $Env:IDF_EXTRA_ACTIONS_PATH="C:\Espressif\frameworks\esp-idf-v5.5.3\esp-who\tools"
+3. echo $Env:IDF_EXTRA_ACTIONS_PATH
+4. Remove-Item -Recurse -Force .\build
+5. ls sdkconfig.bsp.*
+6. idf.py -DSDKCONFIG_DEFAULTS="sdkconfig.bsp.esp32_s3_eye" set-target "esp32s3"
+7. (optional) idf.py menuconfig
+8. idf.py build
+9. idf.py -p COM5 flash
+10. idf.py -p COM5 monitor
+
+1. cd C:\Github_School\project-1-visual-object-detectoion-vlipare-ctrl\test_programs\image_capture
+2. $Env:IDF_EXTRA_ACTIONS_PATH="C:\Espressif\frameworks\esp-idf-v5.5.3\esp-who\tools"
+3. $Env:BSP="esp32_s3_eye"
+4. Remove-Item -Recurse -Force .\build
+5. idf.py -DSDKCONFIG_DEFAULTS="sdkconfig.bsp.esp32_s3_eye" set-target esp32s3
+6. idf.py build
+7. idf.py -p COM5 flash
+8. idf.py -p COM5 monitor
+
+idf.py -p COM5 monitor | tee MugSession1.txt
+
+idf.py -p COM5 monitor | tee "C:\Github_School\project-1-visual-object-detectoion-vlipare-ctrl\imageTxtFiles\ShoeSession5.txt"
